@@ -1,0 +1,81 @@
+.employees-page {
+    /* Add appropriate styling for the employees page container */
+    margin: auto;
+    padding: 25px;
+  }
+  
+  .view-options {
+    /* Add appropriate styling for the view options container */
+    margin-bottom: 20px;
+  }
+  
+  .employee-list-container {
+    /* Add appropriate styling for the employee list container */
+  }
+  
+  .employee-list ul {
+    /* Add appropriate styling for the employee list */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .employee-list ul li {
+    /* Add appropriate styling for each employee list item */
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .employee-list ul li span {
+    /* Add appropriate styling for the employee details */
+    margin-right: 10px;
+  }
+  
+  .employee-list ul li .action-buttons {
+    /* Add appropriate styling for the action buttons container */
+    margin-left: auto;
+  }
+  
+  .pagination {
+    /* Add appropriate styling for the pagination container */
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 100px; /* Adjust the margin-bottom value as needed */
+  }
+  
+  .employee-card-list-container {
+    /* Add appropriate styling for the employee card list container */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .employee-card-list-container .card {
+    /* Add appropriate styling for each employee card */
+    width: calc(33.33% - 10px); /* Adjust the width based on your layout */
+    margin-bottom: 20px;
+  }
+  
+  .employee-card-list-container .card .card-content {
+    /* Add appropriate styling for the card content */
+  }
+  
+  .employee-card-list-container .card .card-actions {
+    /* Add appropriate styling for the card actions container */
+    margin-top: 10px;
+  }
+  
+  .employee-card-list-container .card .card-actions button {
+    /* Add appropriate styling for the action buttons */
+  }
+  
+  .employee-card-list .pagination {
+    /* Add appropriate styling for the pagination container in card view */
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 100px; /* Adjust the margin-bottom value as needed */
+  }
+  

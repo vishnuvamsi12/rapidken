@@ -1,0 +1,22 @@
+<header>
+  <nav>
+    <div class="logo">
+      <i class="fab fa-angular"></i>
+    </div>
+    <div class="search-bar">
+      <app-search-bar (searchQuery)="onSearch($event)"></app-search-bar>
+    </div>
+    <div class="menu">
+      <button class="hamburger" (click)="toggleMenu()">☰</button>
+      <ul class="navigation" [ngClass]="{ 'show': isMenuOpen }">
+        <li>
+          <a *ngIf="!isEmployeesPage" href="#">Employees</a>
+          <a *ngIf="isEmployeesPage" href="#" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+

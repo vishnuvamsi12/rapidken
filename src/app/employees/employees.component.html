@@ -1,0 +1,76 @@
+<div class="employees-page">
+  <h1>Employees Page</h1>
+  <br>
+
+  <button (click)="toggleRegistrationForm()">+ New employee</button>
+  <br>
+
+  <div *ngIf="showRegistrationForm">
+    <app-registration-form (formSubmitted)="saveEmployee($event)"></app-registration-form>
+  </div>
+
+  <br>
+
+  <div>
+    Click on any view
+  </div>
+
+  <br>
+
+  <div class="view-options">
+    <button (click)="switchToListView()">List View</button>
+    <button (click)="switchToCardView()">Card View</button>
+  </div>
+
+  <div class="search-bar2">
+    <app-search-bar2 (searchQuery)="onSearch($event)"></app-search-bar2>
+  </div>
+
+  <div class="employee-list" *ngIf="showListView">
+    <h2>List View</h2>
+    <div class="employee-list-container">
+      <ul>
+        <li *ngFor="let employee of filteredEmployees">
+          <span>{{ employee.name }}</span> - <span>{{ employee.position }}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="pagination">
+      <button *ngFor="let page of getTotalPages() | numberArray" [class.active]="page === currentPage"
+        (click)="goToPage(page)">{{ page }}</button>
+    </div>
+  </div>
+
+  <div class="employee-card-list" *ngIf="showCardView">
+    <h2>Card View</h2>
+    <div class="employee-card-list-container">
+      <div class="card" *ngFor="let employee of filteredEmployees">
+        <div class="card-content">
+          <h3>{{ employee.name }}</h3>
+          <p>{{ employee.position }}</p>
+          <p>{{ employee.about }}</p>
+          <p>{{ employee.joiningDate }}</p>
+        </div>
+        <div class="card-actions">
+          <button (click)="editEmployee(employee)">Edit</button>
+          <button (click)="deleteEmployee(employee)">Delete</button>
+        </div>
+      </div>
+    </div>
+    <div class="pagination" *ngIf="getTotalPages() > 1">
+      <button *ngFor="let page of getTotalPages() | numberArray" [class.active]="page === currentPage"
+        (click)="goToPage(page)">{{ page }}</button>
+    </div>
+  </div>
+</div>
+
+<div class="employee-list" *ngIf="isEmployeesPage">
+  <h2>List View</h2>
+  <div class="employee-list-container">
+    <ul>
+      <li *ngFor="let employee of filteredEmployees">
+        <span>{{ employee.name }}</span> - <span>{{ employee.position }}</span>
+      </li>
+    </ul>
+  </div>
+</div>

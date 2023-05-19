@@ -1,0 +1,17 @@
+.search-bar2 {
+    display: flex;
+  }
+  
+  .search-bar2 input {
+    padding: 5px;
+    margin-right: 5px;
+  }
+  
+  .search-bar2 button {
+    padding: 5px 10px;
+    background-color: #dc8635;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  

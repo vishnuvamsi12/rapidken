@@ -1,0 +1,41 @@
+<form [formGroup]="registrationForm" (ngSubmit)="submitForm()">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name" />
+      <div *ngIf="registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched">
+        Name is required.
+      </div>
+    </div>
+  
+    <div>
+      <label for="position">Position:</label>
+      <input type="text" id="position" formControlName="position" />
+      <div *ngIf="registrationForm.get('position')?.invalid && registrationForm.get('position')?.touched">
+        Position is required.
+      </div>
+    </div>
+  
+    <div>
+      <label for="about">About:</label>
+      <textarea id="about" formControlName="about"></textarea>
+      <div *ngIf="registrationForm.get('about')?.invalid && registrationForm.get('about')?.touched">
+        About is required.
+      </div>
+    </div>
+  
+    <div>
+      <label for="joiningDate">Joining Date:</label>
+      <mat-form-field appearance="fill">
+        <mat-label>Joining Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="joiningDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <div *ngIf="registrationForm.get('joiningDate')?.invalid && registrationForm.get('joiningDate')?.touched">
+        Joining Date is required.
+      </div>
+    </div>
+  
+    <button type="submit">Save</button>
+  </form>
+  
